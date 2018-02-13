@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using TangentHR.Views;
+using Xamarin.Forms;
 
 namespace TangentHR
 {
@@ -8,7 +9,7 @@ namespace TangentHR
         {
             InitializeComponent();
 
-            MainPage = new TangentHRPage();
+            MainPage = new LoginPage();
         }
 
         protected override void OnStart()
