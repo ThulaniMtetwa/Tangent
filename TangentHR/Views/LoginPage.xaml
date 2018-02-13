@@ -1,5 +1,13 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TangentHR.Views.LoginPage">
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage  NavigationPage.HasNavigationBar="False" xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TangentHR.Views.LoginPage">
 	<ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" Padding="25,10">
+                    <Entry Text="John_Doe" Placeholder="Username" />
+                    <Entry Text="Dev@csharp123" Placeholder="Password" IsPassword="true" />
+                    <Button Text="Log In" TextColor="White" BackgroundColor="#00385f"/>
+
+            <ActivityIndicator IsRunning="true"
+            VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+    </StackLayout>
 	</ContentPage.Content>
 </ContentPage>
