@@ -1,6 +1,9 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
+using TangentHR.Models;
+using TangentHR.Services;
 
 namespace TangentHR.ViewModel
 {
@@ -8,8 +11,31 @@ namespace TangentHR.ViewModel
     {
 
         string username, password;
+        bool isLoading;
+
+        private ApiServices apiService;
+
         public LoginViewModel()
         {
+            apiService = new ApiServices();
+        }
+
+        public string ValidationErrors { get; private set; }
+
+        public bool IsLoading
+        {
+            get
+            {
+                return isLoading;
+            }
+            set
+            {
+                if (isLoading != value)
+                {
+                    isLoading = value;
+                    OnPropertyChanged();
+                }
+            }
         }
 
         public string Username
@@ -55,9 +81,37 @@ namespace TangentHR.ViewModel
             }
         }
 
-        public void SetUsername()
+        public async Task<Tuple<bool, string, Auth>> IsValidLogin()
         {
-            System.Diagnostics.Debug.WriteLine(username);
+
+            IsLoading = true;
+
+            ValidationErrors = "";
+            if (string.IsNullOrEmpty(Username))
+            {
+                ValidationErrors = "Please enter a username.";
+            }
+            if (string.IsNullOrEmpty(Password))
+            {
+                ValidationErrors += "Please enter a password.";
+            }
+
+
+            Auth auth = await apiService.SignInAsync(Username, Password);
+
+            if (auth.token == null)
+            {
+                ValidationErrors += "Please ensure you entered the correct credentials.";
+                IsLoading = false;
+                return Tuple.Create(false, ValidationErrors, auth);
+
+            }
+            else
+            {
+                ValidationErrors += "Succcessful login.";
+                IsLoading = false;
+                return Tuple.Create(true, ValidationErrors, auth);
+            }
         }
     }
 }

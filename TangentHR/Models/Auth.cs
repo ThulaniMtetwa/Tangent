@@ -6,5 +6,6 @@ namespace TangentHR.Models
         public Auth()
         {
         }
+        public string token { set; get; }
     }
 }

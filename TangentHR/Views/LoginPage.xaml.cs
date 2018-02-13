@@ -15,9 +15,32 @@ namespace TangentHR.Views
             BindingContext = login;
         }
 
-        void SignIn(object sender, System.EventArgs e)
+
+        async void SignInAsync(object sender, EventArgs e)
         {
-            login.SetUsername();
+
+            try
+            {
+                var result = await login.IsValidLogin();
+
+                if (result.Item1)
+                {
+
+                    Application.Current.Properties["token"] = result.Item3.token;
+
+                    //Navigation.InsertPageBefore(new TabbedNavPage(), this);
+
+                    //await Navigation.PopAsync();
+                }
+                else
+                {
+                    await DisplayAlert("Information", result.Item2, "OK");
+                }
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex);
+            }
         }
     }
 }
