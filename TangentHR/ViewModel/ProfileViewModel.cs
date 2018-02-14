@@ -13,7 +13,7 @@ namespace TangentHR.ViewModel
         private ApiServices apiService;
         bool isLoading;
 
-        string fulname, position, address, email, kin_fullname, kin_address, kin_email, salary;
+        string fulname, position, address, email;
 
         public bool IsLoading
         {
@@ -93,68 +93,6 @@ namespace TangentHR.ViewModel
                 }
             }
         }
-        public string Kin_fullname
-        {
-            get
-            {
-                return kin_fullname;
-            }
-            set
-            {
-                if (kin_fullname != value)
-                {
-                    kin_fullname = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        public string Kin_address
-        {
-            get
-            {
-                return kin_address;
-            }
-            set
-            {
-                if (kin_address != value)
-                {
-                    kin_address = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-        public string Kin_email
-        {
-            get
-            {
-                return kin_email;
-            }
-            set
-            {
-                if (kin_email != value)
-                {
-                    kin_email = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
-
-        public string Salary
-        {
-            get
-            {
-                return salary;
-            }
-            set
-            {
-                if (salary != value)
-                {
-                    salary = value;
-                    OnPropertyChanged();
-                }
-            }
-        }
 
 
         public ProfileViewModel()
@@ -183,8 +121,6 @@ namespace TangentHR.ViewModel
             Address = result.Physical_Address;
             Email = result.user.Email;
            
-
-
             return result;
         }
 
