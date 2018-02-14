@@ -5,10 +5,10 @@ Assesment
 - Profile View Complete
 
 # Todo
-```
--Employee List
--Employee Search
--Employee Detail View
--Unit Testing
-```
+
+1. Employee List
+2. Employee Search
+3. Employee Detail View
+4. Unit Testing
+
 
