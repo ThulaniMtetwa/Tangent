@@ -73,6 +73,7 @@
     <Compile Include="Views\EmployeeListPage.xaml.cs">
       <DependentUpon>EmployeeListPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\ProfileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">

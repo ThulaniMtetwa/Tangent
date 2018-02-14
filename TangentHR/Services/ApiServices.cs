@@ -43,16 +43,16 @@ namespace TangentHR.Services
             return JsonConvert.DeserializeObject<Auth>(await response.Content.ReadAsStringAsync());
         }
 
-        public async Task<UserProfile> GetProfileAsync(string token)
+        public async Task<Employee> GetProfileAsync(string token)
         {
 
             var client = new HttpClient();
 
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", token);
 
-            var jsonResponse = await client.GetStringAsync(Constants.BaseUrl + "/api/user/me/");
+            var jsonResponse = await client.GetStringAsync(Constants.BaseUrl + "/api/employee/me/");
 
-            var userProfile = JsonConvert.DeserializeObject<UserProfile>(jsonResponse);
+            var userProfile = JsonConvert.DeserializeObject<Employee>(jsonResponse);
 
             return userProfile;
         }
