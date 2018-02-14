@@ -26,9 +26,9 @@ namespace TangentHR.Services
             var keyValues = new List<KeyValuePair<string,
              string>> {
      new KeyValuePair < string,
-                string > ("username", Constants.Username),
+                string > ("username", signInModel.Username),
      new KeyValuePair < string,
-                string > ("password", Constants.Password)
+                string > ("password", signInModel.Password)
     };
 
             var request = new HttpRequestMessage(HttpMethod.Post, Constants.BaseUrl + "/api-token-auth/");

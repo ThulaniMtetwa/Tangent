@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TangentHR.Views.ProfilePage"
+    Title="Profile"
+    Icon="ic_account_circle.png">
+	<ContentPage.Content>
+            <StackLayout Padding="20,20">
+            <Frame Padding="10" BackgroundColor="#f7f7f7">
+                <StackLayout Orientation="Vertical">
+                    <Label TextColor="Black" Text="John Doe" FontAttributes="Bold" />
+                    <Label TextColor="Black" Text="Software Dev : Senior" />
+                    <Frame BackgroundColor="#f7f7f7">
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Horizontal">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="30" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" TextColor="Black" Text="Physical Address :" FontAttributes="Bold" />
+                                    <Label Grid.Row="1" TextColor="Black" Text="12 Church Street, Bluekraans, Midrand, Johannesburg" />
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                
+                                <Label TextColor="Black" Text="Email :" FontAttributes="Bold" />
+                                <Label TextColor="Black" Text="pravin@axedmps.com" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <Label TextColor="Black" Text="Mini Ghordan" FontAttributes="Bold" />
+                    <Frame BackgroundColor="#f7f7f7">
+                        <StackLayout Orientation="Vertical">
+                            <Label TextColor="Black" Text="Next of keen" FontAttributes="Bold" />
+                            <StackLayout Orientation="Horizontal">
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                        <RowDefinition Height="30" />
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Row="0" TextColor="Black" Text="Physical Address :" FontAttributes="Bold" />
+                                    <Label Grid.Row="1" TextColor="Black" Text="12 Church Street, Bluekraans, Midrand, Johannesburg" />
+                                </Grid>
+                            </StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                
+                                <Label TextColor="Black" Text="Email :" FontAttributes="Bold" />
+                                <Label TextColor="Black" Text="pravin@axedmps.com" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout IsVisible="true">
+                    <Label TextColor="Black" Text="Salary" FontAttributes="Bold" />
+                         <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="50" />
+                                    </Grid.ColumnDefinitions>
+                    <Label TextColor="Black" Text="Software Dev : Senior" />
+                    </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

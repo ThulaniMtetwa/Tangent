@@ -87,11 +87,11 @@ namespace TangentHR.ViewModel
             IsLoading = true;
 
             ValidationErrors = "";
-            if (string.IsNullOrEmpty(Username))
+            if (string.IsNullOrEmpty(username))
             {
                 ValidationErrors = "Please enter a username.";
             }
-            if (string.IsNullOrEmpty(Password))
+            if (string.IsNullOrEmpty(password))
             {
                 ValidationErrors += "Please enter a password.";
             }

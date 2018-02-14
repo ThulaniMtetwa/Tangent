@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="TangentHR.Views.TabbedNavPage"
+    xmlns:local="clr-namespace:TangentHR.Views;assembly=TangentHR"
+    NavigationPage.HasNavigationBar="False">
+	<local:ProfilePage>
+    </local:ProfilePage>
+     <local:EmployeeListPage>
+    </local:EmployeeListPage>
+</TabbedPage>

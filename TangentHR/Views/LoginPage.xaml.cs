@@ -28,9 +28,9 @@ namespace TangentHR.Views
 
                     Application.Current.Properties["token"] = result.Item3.token;
 
-                    //Navigation.InsertPageBefore(new TabbedNavPage(), this);
+                    Navigation.InsertPageBefore(new TabbedNavPage(), this);
 
-                    //await Navigation.PopAsync();
+                    await Navigation.PopAsync();
                 }
                 else
                 {
