@@ -1,13 +1,14 @@
 # Tangent
 Assesment
 
--Login Complete
--Profile View Complete
+- Login Complete
+- Profile View Complete
 
-#Todo
-
+# Todo
+```
 -Employee List
 -Employee Search
 -Employee Detail View
 -Unit Testing
+```
 
