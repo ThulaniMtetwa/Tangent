@@ -3,12 +3,12 @@ Assesment
 
 - Login Complete
 - Profile View Complete
+- Employee Detail View
+- Employee List
 
 # Todo
 
-1. Employee List
-2. Employee Search
-3. Employee Detail View
-4. Unit Testing
+1. Employee Search
+2. Unit Testing
 
 
