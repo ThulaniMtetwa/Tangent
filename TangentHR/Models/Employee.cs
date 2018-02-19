@@ -16,9 +16,9 @@ namespace TangentHR.Models
         public string Email { set; get; }
         public bool IsEmployed { set; get; }
 
-        public UserProfile user = new UserProfile();
-        public Position position = new Position();
-        public List<NextOfKin> kin = new List<NextOfKin>();
-        public List<Review> review = new List<Review>();
+        public UserProfile User { get; set; }
+        public Position Position { get; set; }
+        public List<NextOfKin> Kin { get; set; }
+        public List<Review> Review { get; set; }
     }
 }

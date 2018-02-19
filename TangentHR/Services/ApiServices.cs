@@ -26,9 +26,9 @@ namespace TangentHR.Services
             var keyValues = new List<KeyValuePair<string,
              string>> {
      new KeyValuePair < string,
-                string > ("username", signInModel.Username),
+                string > ("username", Constants.Username),
      new KeyValuePair < string,
-                string > ("password", signInModel.Password)
+                string > ("password", Constants.Password)
     };
 
             var request = new HttpRequestMessage(HttpMethod.Post, Constants.BaseUrl + "/api-token-auth/");
@@ -53,6 +53,34 @@ namespace TangentHR.Services
             var jsonResponse = await client.GetStringAsync(Constants.BaseUrl + "/api/employee/me/");
 
             var userProfile = JsonConvert.DeserializeObject<Employee>(jsonResponse);
+
+            return userProfile;
+        }
+
+        public async Task<List<Employee>> GetSearchedEmployeesAsync(string token, string emailString = "")
+        {
+
+            var client = new HttpClient();
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", token);
+
+            var jsonResponse = await client.GetStringAsync(Constants.BaseUrl + "/api/employee/?email__contains="+emailString);
+
+            var userProfile = JsonConvert.DeserializeObject<List<Employee>>(jsonResponse);
+
+            return userProfile;
+        }
+
+        public async Task<List<Employee>> GetEmployeesAsync(string token)
+        {
+
+            var client = new HttpClient();
+
+            client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Token", token);
+
+            var jsonResponse = await client.GetStringAsync(Constants.BaseUrl + "/api/employee/");
+
+            var userProfile = JsonConvert.DeserializeObject<List<Employee>>(jsonResponse);
 
             return userProfile;
         }

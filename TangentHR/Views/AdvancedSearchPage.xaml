@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TangentHR.Views.AdvancedSearchPage">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Spacing="5">
+            <ScrollView Orientation="Vertical" VerticalOptions="FillAndExpand">
+                <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+            <Label Text="Search by Email" TextColor="Black" Font="Large" />
+            <Entry Text="{Binding Email, Mode=TwoWay}" Placeholder="Email" />
+            <Label Text="Race" TextColor="Black" Font="Large" />
+            <Label Text="Position" TextColor="Black" Font="Large" />
+            <Label Text="Start Date" TextColor="Black" Font="Large" />
+            <Label Text="Gender" TextColor="Black" Font="Large" />
+            <Label Text="Birth Date" TextColor="Black" Font="Large" />
+            <Button Text="Apply" TextColor="#fff" Clicked="GoToList" BackgroundColor="#003154" />
+           </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="TangentHR.Views.EmployeePage">
+	<ContentPage.Content>
+        <StackLayout Padding="20,20">
+            <Frame Padding="10" BackgroundColor="#f7f7f7">
+                <StackLayout Orientation="Vertical">
+                    <Label TextColor="Black" Text="{Binding Fullname, Mode=TwoWay}" FontAttributes="Bold" />
+                    <Label TextColor="Black" Text="{Binding Position, Mode=TwoWay}" />
+                    <Frame BackgroundColor="#f7f7f7">
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Orientation="Vertical">
+                                
+                                    <Label TextColor="Black" Text="Employed Yes/No" FontAttributes="Bold" />
+                                    <Switch IsToggled="{Binding IsEmployeed}" IsEnabled="true" ></Switch>
+                               
+                                
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical">
+                                
+                                <Label TextColor="Black" Text="Email :" FontAttributes="Bold" />
+                                <Label TextColor="Black" Text="{Binding Email, Mode=TwoWay}" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+	</ContentPage.Content>
+</ContentPage>

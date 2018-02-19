@@ -14,8 +14,6 @@ namespace TangentHR.Views
         public ProfilePage()
         {
             InitializeComponent();
-
-            InitializeComponent();
             profile = new ProfileViewModel();
             BindingContext = profile;
           
@@ -29,8 +27,7 @@ namespace TangentHR.Views
             {
                 var id = Application.Current.Properties["token"] as string;
                 // do something with id
-                Employee employe =   await profile.GetUserProfile(id);
-
+                await profile.GetUserProfile(id);
             }
         }
     }

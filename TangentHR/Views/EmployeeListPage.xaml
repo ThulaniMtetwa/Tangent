@@ -1,10 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    x:Class="TangentHR.Views.EmployeeListPage"
-    Title="Employees"
-    Icon="ic_list.png">
-	<ContentPage.Content>
-        
-	</ContentPage.Content>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="TangentHR.Views.EmployeeListPage" Title="Employees" Icon="ic_list.png">
+    <StackLayout>
+        <Button Text="Advanced Search" TextColor="#fff" Clicked="AdvancedSearch" BackgroundColor="#003154" />
+        <ListView x:Name="listView" ItemSelected="OnItemSelected" RowHeight="90" ItemsSource="{Binding EmployeesList}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout HorizontalOptions="StartAndExpand" Orientation="Horizontal">
+                            <Image Source="ic_account_circle.png" WidthRequest="44" HeightRequest="44" />
+                            <StackLayout Padding="5,20,0,0" VerticalOptions="StartAndExpand" Orientation="Vertical">
+                                <Label Text="{Binding User.First_name, Mode=TwoWay}" YAlign="Center" Font="Medium" />
+                                <Label Text="{Binding Position.Name, Mode=TwoWay}" YAlign="Center" Font="Micro" />
+                            </StackLayout>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <ActivityIndicator IsRunning="{Binding IsLoading, Mode=TwoWay}" IsVisible="{Binding IsLoading, Mode=TwoWay}" VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" />
+    </StackLayout>
 </ContentPage>

@@ -1,34 +1,24 @@
 ﻿using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Threading.Tasks;
 using TangentHR.Models;
-using TangentHR.Services;
 
 namespace TangentHR.ViewModel
 {
-    public class ProfileViewModel: INotifyPropertyChanged
+    public class EmployeeDetailModel: INotifyPropertyChanged
     {
 
-        private ApiServices apiService;
-        bool isLoading;
+        string fulname,
+         postion,
+         email;
+        bool isEmployed;
 
-        string fulname, position, address, email;
-
-        public bool IsLoading
+        public EmployeeDetailModel(Employee employee)
         {
-            get
-            {
-                return isLoading;
-            }
-            set
-            {
-                if (isLoading != value)
-                {
-                    isLoading = value;
-                    OnPropertyChanged();
-                }
-            }
+            Fullname =  employee.User.First_name;
+            Position = employee.Position.Level + " " + employee.Position.Name;
+            IsEmployeed = employee.User.Is_staff;
+            Email = employee.Email;
         }
 
         public string Fullname
@@ -46,38 +36,39 @@ namespace TangentHR.ViewModel
                 }
             }
         }
-       
+
         public string Position
         {
             get
             {
-                return position;
+                return postion;
             }
             set
             {
-                if (position != value)
+                if (postion != value)
                 {
-                    position = value;
+                    postion = value;
                     OnPropertyChanged();
                 }
             }
         }
 
-        public string Address
+        public bool IsEmployeed
         {
             get
             {
-                return address;
+                return isEmployed;
             }
             set
             {
-                if (address != value)
+                if (isEmployed != value)
                 {
-                    address = value;
+                    isEmployed = value;
                     OnPropertyChanged();
                 }
             }
         }
+
         public string Email
         {
             get
@@ -94,12 +85,6 @@ namespace TangentHR.ViewModel
             }
         }
 
-
-        public ProfileViewModel()
-        {
-            apiService = new ApiServices();
-        }
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string name = "")
@@ -111,16 +96,6 @@ namespace TangentHR.ViewModel
             }
         }
 
-        public async Task GetUserProfile(string userToken)
-        { 
-            Employee result = await apiService.GetProfileAsync(userToken);
-
-            System.Diagnostics.Debug.WriteLine(result);
-            Fullname = result.User.First_name +" "+result.User.Last_name;
-            Position = result.Position.Level + " "+result.Position.Name;
-            Address = result.Physical_Address;
-            Email = result.User.Email;
-        }
 
     }
 }

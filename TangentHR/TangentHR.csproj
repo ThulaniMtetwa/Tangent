@@ -45,6 +45,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\EmployeePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\AdvancedSearchPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -74,6 +82,15 @@
       <DependentUpon>EmployeeListPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModel\ProfileViewModel.cs" />
+    <Compile Include="ViewModel\EmployeesViewModel.cs" />
+    <Compile Include="Views\EmployeePage.xaml.cs">
+      <DependentUpon>EmployeePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\EmployeeDetailModel.cs" />
+    <Compile Include="Views\AdvancedSearchPage.xaml.cs">
+      <DependentUpon>AdvancedSearchPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModel\AdvancedSearchModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Xamarin.Forms.Core">
